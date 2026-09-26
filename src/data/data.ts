@@ -1,6 +1,10 @@
 import type { TimelineItem } from "../components/Timeline";
 import type { Project } from "../pages/Projects";
-import telemetryStl from "./telemetryStl.stl?url";
+
+import telemetryStl from "../assets/telemetryStl.stl?url";
+import scrubVideo from "../assets/scrub.webm";
+import ganttImage from "../assets/Gantt.png";
+import wingtipImage from "../assets/Wingtip.png";
 
 const now = new Date();
 const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
@@ -85,7 +89,7 @@ export const projects: Project[] = [
             "STEP",
             "CAD",
         ],
-        videoUrl: "src/assets/scrub.webm"
+        videoUrl: scrubVideo,
     },
     {
         number: "02",
@@ -101,8 +105,8 @@ export const projects: Project[] = [
             "React",
             "TypeScript",
         ],
-        image: "src/assets/Gantt.png",
-        href: "https://github.com/Danilosrr/Gantt"
+        image: ganttImage,
+        href: "https://github.com/Danilosrr/Gantt",
     },
     {
         number: "03",
@@ -117,7 +121,7 @@ export const projects: Project[] = [
             "Python",
             "Design Optimization",
         ],
-        image: "src/assets/Wingtip.png",
+        image: wingtipImage,
     },
     {
         number: "04",
