@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+body {
+    margin: 0;
+}
+
+/* =====================================================
+   ENGINEERING GRID
+   ===================================================== */
+
+.engineering-grid {
+    background-image:
+        /* Fine grid */
+        linear-gradient(to right,
+            rgba(23, 23, 23, 0.035) 1px,
+            transparent 1px),
+        linear-gradient(to bottom,
+            rgba(23, 23, 23, 0.035) 1px,
+            transparent 1px),
+
+        /* Major grid */
+        linear-gradient(to right,
+            rgba(23, 23, 23, 0.055) 1px,
+            transparent 1px),
+        linear-gradient(to bottom,
+            rgba(23, 23, 23, 0.055) 1px,
+            transparent 1px);
+
+    background-size:
+        32px 32px,
+        32px 32px,
+        160px 160px,
+        160px 160px;
+
+    /*
+   * Makes the grid gradually disappear
+   * towards the edges.
+   */
+    mask-image: radial-gradient(ellipse 85% 75% at center,
+            black 0%,
+            transparent 80%);
+
+    -webkit-mask-image: radial-gradient(ellipse 85% 75% at center,
+            black 0%,
+            transparent 80%);
+}
+
+
+/* =====================================================
+   WORD FLIP
+   ===================================================== */
+
+.word-flip {
+    display: inline-block;
+
+    /*
+   * Gives the word enough 3D depth for
+   * the rotation to feel like a cube face.
+   */
+    perspective: 1000px;
+
+    transform-style: preserve-3d;
+}
+
+
+.word-flip__word {
+    display: inline-block;
+
+    transform-origin: center bottom;
+
+    /*
+   * Every time React gives this element a new `key`
+   * the animation starts again.
+   */
+    animation:
+        word-flip-in 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* =====================================================
+   FLIP ANIMATION
+   ===================================================== */
+
+@keyframes word-flip-in {
+    0% {
+        opacity: 0;
+
+        transform:
+            rotateX(-90deg) translateY(0.18em);
+    }
+
+    35% {
+        opacity: 0.35;
+    }
+
+    65% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            rotateX(0deg) translateY(0);
+    }
+}
+
+/* =====================================================
+   DRAWING UNDERLINE
+   ===================================================== */
+
+.animated-underline {
+    position: relative;
+    display: inline-block;
+
+    /*
+     * The text itself remains completely static.
+     * Only the pseudo-element is animated.
+     */
+}
+
+.animated-underline::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -0.08em;
+
+    width: 100%;
+    height: 2px;
+
+    background: #2563EB;
+
+    transform: scaleX(0);
+    transform-origin: left center;
+
+    animation:
+        draw-underline 900ms cubic-bezier(0.22, 1, 0.36, 1) var(--underline-delay, 0ms) forwards;
+}
+
+@keyframes draw-underline {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+
+/* =====================================================
+   PAGE TRANSITION — FADE OUT / FADE IN
+   ===================================================== */
+
+.page-transition {
+    min-height: 100vh;
+
+    transition:
+        opacity 300ms ease,
+        transform 300ms ease;
+}
+
+.page-transition-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-transition-out {
+    opacity: 0;
+    transform: translateY(8px);
+}
