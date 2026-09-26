@@ -1,7 +1,7 @@
 import type { TimelineItem } from "../components/Timeline";
 import type { Project } from "../pages/Projects";
 
-import telemetryStl from "../assets/telemetryStl.stl?url";
+import telemetryStl from "./telemetryStl.stl?url";
 import scrubVideo from "../assets/scrub.webm";
 import ganttImage from "../assets/Gantt.png";
 import wingtipImage from "../assets/Wingtip.png";
