@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import Portrait from "../components/Portrait";
 import Underline from "../components/Underline";
 import WordFlip from "../components/WordFlip";
-import "../style/Landing.css";
 import NextPage from "../components/NextPage";
+import "../style/Landing.css";
 
 type Combination = {
     discipline: string;

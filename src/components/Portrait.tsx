@@ -1,3 +1,4 @@
+import meImage from "../assets/me.png";
 
 function Portrait() {
     return (
@@ -13,7 +14,7 @@ function Portrait() {
                 {/* Portrait */}
                 <div className="portrait-image-wrapper">
                     <img
-                        src="src/assets/me.png"
+                        src={meImage}
                         alt="Danilo"
                         className="portrait-image"
                     />
