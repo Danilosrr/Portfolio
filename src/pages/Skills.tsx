@@ -613,11 +613,12 @@ function Skills() {
             id="skills"
             className="
                 relative z-10
-                flex min-h-screen h-[100dvh]
+                flex h-[100svh] min-h-[100svh]
                 items-start
-                px-6 py-20
-                sm:px-10
+                px-6 pt-[calc(1.5rem+env(safe-area-inset-top,0px))] pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))]
+                sm:px-10 sm:py-20
                 lg:px-20
+                overflow-hidden
             "
         >
             <div

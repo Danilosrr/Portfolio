@@ -154,7 +154,8 @@ body {
    ===================================================== */
 
 .page-transition {
-    min-height: 100vh;
+    min-height: 100svh;
+    height: 100svh;
 
     transition:
         opacity 300ms ease,

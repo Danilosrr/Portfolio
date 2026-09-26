@@ -159,7 +159,7 @@ function Projects() {
     return (
         <section
             id="projects"
-            className="relative z-10 flex h-[100dvh] min-h-screen items-start px-6 py-20 sm:px-10 lg:px-20"
+            className="relative z-10 flex h-[100svh] min-h-[100svh] items-start px-6 pt-[calc(1.5rem+env(safe-area-inset-top,0px))] pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] sm:px-10 sm:py-20 lg:px-20 overflow-hidden"
         >
             <div className="mx-auto flex h-full w-full max-w-7xl flex-col">
                 {/* =====================================================

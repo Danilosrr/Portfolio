@@ -25,7 +25,7 @@ function Contact({ onNext }: ContactProps) {
     return (
         <section
             id="contact"
-            className="relative z-10 flex min-h-screen items-start px-6 py-20 sm:px-10 lg:px-20 h-[100dvh]"
+            className="relative z-10 flex h-[100svh] min-h-[100svh] items-start px-6 pt-[calc(1.5rem+env(safe-area-inset-top,0px))] pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] sm:px-10 sm:py-20 lg:px-20 overflow-hidden"
         >
             <div className="mx-auto flex h-full w-full max-w-7xl flex-col justify-between">
                 <div>

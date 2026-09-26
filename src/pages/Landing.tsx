@@ -49,20 +49,20 @@ function Landing({ onNext }: { onNext: () => void }) {
     return (
         <section
             id="hero"
-            className="relative z-10 flex min-h-screen items-center px-6 py-20 sm:px-10 lg:px-20 h-[100dvh]"
+            className="relative z-10 flex h-[100svh] min-h-[100svh] items-center px-6 pt-[calc(1rem+env(safe-area-inset-top,0px))] pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] sm:px-10 sm:py-16 lg:px-20 lg:py-20 overflow-hidden"
         >
-            <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-16 lg:grid-cols-[1fr_auto] lg:gap-20">
+            <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-4 sm:gap-10 lg:grid-cols-[1fr_auto] lg:gap-20">
 
                 {/* Left — Content */}
-                <div className="max-w-5xl">
+                <div className="max-w-5xl pb-12 sm:pb-0">
 
                     {/* Greeting */}
-                    <p className="mb-6 text-xl font-medium tracking-tight sm:text-2xl">
+                    <p className="mb-2 text-lg font-medium tracking-tight sm:mb-6 sm:text-2xl">
                         Hi! I'm Danilo,
                     </p>
 
                     {/* Animated title */}
-                    <h1 className="text-5xl font-bold leading-[0.95] tracking-[-0.045em] sm:text-7xl md:text-8xl lg:text-[clamp(5rem,9vw,9rem)]">
+                    <h1 className="text-4xl font-bold leading-[0.95] tracking-[-0.045em] sm:text-7xl md:text-8xl lg:text-[clamp(5rem,9vw,9rem)]">
                         <div>
                             <WordFlip
                                 word={current.discipline}
@@ -70,7 +70,7 @@ function Landing({ onNext }: { onNext: () => void }) {
                             />
                         </div>
 
-                        <div className="mt-2">
+                        <div className="mt-1 sm:mt-2">
                             <WordFlip
                                 word={current.role}
                                 color="blue"
@@ -79,7 +79,7 @@ function Landing({ onNext }: { onNext: () => void }) {
                     </h1>
 
                     {/* Description */}
-                    <p className="mt-10 max-w-2xl text-lg leading-relaxed text-[#666666] sm:text-xl lg:text-2xl">
+                    <p className="mt-4 sm:mt-10 max-w-2xl text-base leading-relaxed text-[#666666] sm:text-xl lg:text-2xl">
                         I solve problems, build things, and move between{" "}
                         <Underline delay={500}>technology</Underline>{" "}
                         and{" "}
@@ -88,10 +88,11 @@ function Landing({ onNext }: { onNext: () => void }) {
                     </p>
 
                     {/* Technical label */}
-                    <div className="mt-12 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-[#999993]">
+                    <div className="mt-4 sm:mt-12 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-[#999993]">
                         <span className="h-px w-8 bg-[#D9D9D4]" />
                         <span>Engineering × Technology</span>
                     </div>
+
                     <NextPage onClick={onNext} />
                 </div>
 
@@ -99,7 +100,7 @@ function Landing({ onNext }: { onNext: () => void }) {
                 <Portrait />
             </div>
         </section>
-    )
+    );
 }
 
-export default Landing
+export default Landing;

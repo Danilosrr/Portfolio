@@ -67,7 +67,7 @@ function App() {
   ];
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#F5F5F2] text-[#171717]">
+    <main className="relative h-[100svh] min-h-[100svh] overflow-hidden bg-[#F5F5F2] text-[#171717]">
       <Background />
 
       <div
